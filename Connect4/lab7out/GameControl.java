@@ -4,6 +4,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.*;
 import javax.swing.JPanel;
@@ -12,7 +13,7 @@ public class GameControl implements ActionListener{
 
 	private JPanel container;
 	private ChatClient user;
-	private JLabel[][] slots;
+	private JLabel[][] slots; //[columns][rows]
 	private int index[];
 	private JLabel info;
 	private Color color;
@@ -74,6 +75,13 @@ public class GameControl implements ActionListener{
 					//switchTurn(); //This Function is to switch the Turn
 					////////////////////////////////////////////
 					////////////////////////////////////////////
+					GameData data = new GameData("",1,"",num);
+					try {
+						user.sendToServer(data);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					info.setText("Other's turn");
 				}
 			}
@@ -128,6 +136,11 @@ public class GameControl implements ActionListener{
 		this.info = info;
 	}
 	
+	public void setChecker(int column)
+	{
+		slots[column][index[column]].setBackground(color);
+		index[column]++;
+	}
 	public void setSlot(JLabel[][] slots)
 	{
 		this.slots = slots;

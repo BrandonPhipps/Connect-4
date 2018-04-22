@@ -17,13 +17,16 @@ public class GameData implements Serializable{
 	private int placement;
 
 
-
+/*
 	public ArrayList<ArrayList<Integer>> getBoard(){
 		return board;
 	}
+	*/
+	
 	public String getOutcome(){
 		return outcome;
 	}
+	
 	public int getColor(){
 		return color;
 	}
@@ -35,7 +38,7 @@ public class GameData implements Serializable{
 	}
 
 
-	public void setBoard(ArrayList<ArrayList<Integer>> board){
+/*	public void setBoard(ArrayList<ArrayList<Integer>> board){
 		for(ArrayList<Integer> list: board) {
 			ArrayList<Integer> holder = new ArrayList<Integer>();	
 			for(Integer checker: list) {
@@ -45,7 +48,8 @@ public class GameData implements Serializable{
 			holder.clear();
 		}
 	}
-
+*/
+	
 	public void setOutcome(String outcome){
 		this.outcome = outcome;
 	}
@@ -59,9 +63,9 @@ public class GameData implements Serializable{
 		this.placement = placement;
 	}
 
-	public GameData(ArrayList<ArrayList<Integer>> board, String outcome, int color, String info, int placement){
+	public GameData(/*ArrayList<ArrayList<Integer>> board,*/ String outcome, int color, String info, int placement){
 
-		setBoard(board);
+		//setBoard(board);
 		setOutcome(outcome);
 		setColor(color);
 		setInfo(info);

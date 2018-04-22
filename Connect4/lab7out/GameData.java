@@ -68,4 +68,5 @@ public class GameData implements Serializable{
 		setPlacement(placement);
 
 	}
+
 }

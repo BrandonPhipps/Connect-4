@@ -154,6 +154,10 @@ public class GameControl implements ActionListener{
 			turn =true;
 	}
 
+	public void setColor(Color color)
+	{
+		this.color=color;
+	}
 	public void disableUsersColumnsSubmit()
 	{
 		//

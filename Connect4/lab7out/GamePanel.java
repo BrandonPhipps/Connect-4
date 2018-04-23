@@ -20,7 +20,7 @@ public class GamePanel extends JPanel{
         JButton[] buttons = new JButton[xsize];
 
         for (int i = 0; i < xsize; i++) {
-            buttons[i] = new JButton("" + (i + 1));
+            buttons[i] = new JButton("" + (i));
             buttons[i].setActionCommand("" + i);
             buttons[i].addActionListener(gc);
 

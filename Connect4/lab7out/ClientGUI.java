@@ -40,7 +40,7 @@ public class ClientGUI extends JFrame
     LoginControl lc = new LoginControl(container,client);
     CreateAccountControl cac = new CreateAccountControl(container,client);
     HomeScreenControl hsc = new HomeScreenControl(container, client);
-    GameControl gc = new GameControl(container, client);
+    GameControl gc = new GameControl(container, client, Color.darkGray);
     
     //Set the client info
     client.setLoginControl(lc);

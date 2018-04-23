@@ -188,13 +188,11 @@ public class ChatServer extends AbstractServer
 					{
 						return;
 					}
-					results = "Player 2 Waiting";
-					
+					results = "Player 2 Waiting";					
 				}
 				else
 				{
-					results = "Player 1 Waiting";		
-					
+					results = "Player 1 Waiting";					
 					
 				}
 				try

@@ -19,7 +19,7 @@ public class GameControl implements ActionListener{
 	private Color color;
 	private boolean turn;
 	
-	public GameControl(JPanel container, ChatClient user) 
+	public GameControl(JPanel container, ChatClient user, Color blackOrRed) 
 	{
 		this.container = container;
 		this.user = user;
@@ -28,7 +28,7 @@ public class GameControl implements ActionListener{
 		{
 			index[i] = 5;
 		}
-		color = Color.red;
+		color = blackOrRed;
 		turn = false; ////////////////////////////////////////////////
 		/////////////////////////////This is the initial status. It can be change
 		//True: Player's turn

@@ -17,9 +17,10 @@ public class GameControl implements ActionListener{
 	private int index[];
 	private JLabel info;
 	private Color color;
+	private Color opponentColor;
 	private boolean turn;
 
-	public GameControl(JPanel container, ChatClient user, Color blackOrRed) 
+	public GameControl(JPanel container, ChatClient user) 
 	{
 		this.container = container;
 		this.user = user;
@@ -28,7 +29,6 @@ public class GameControl implements ActionListener{
 		{
 			index[i] = 5;
 		}
-		color = blackOrRed;
 		turn = false; ////////////////////////////////////////////////
 		/////////////////////////////This is the initial status. It can be change
 		//True: Player's turn
@@ -58,13 +58,13 @@ public class GameControl implements ActionListener{
 		{
 			if(turn)
 			{
-				Color temp = slots[0][0].getBackground();
+				//Color temp = slots[0][0].getBackground();
 				int num = Integer.parseInt(command);
 				if(index[num] >= 0)
 				{
 					slots[num][index[num]].setBackground(color);
 					slots[num][index[num]].setOpaque(true);
-					index[num]--;
+					--index[num];
 					if(winCheck())
 					{
 						info.setText("You Win");
@@ -138,9 +138,11 @@ public class GameControl implements ActionListener{
 
 	public void setChecker(int column)
 	{
-		slots[column][index[column]].setBackground(color);
-		index[column]++;
+		slots[column][index[column]].setBackground(opponentColor);
+		slots[column][index[column]].setOpaque(true);
+		--index[column];
 	}
+	
 	public void setSlot(JLabel[][] slots)
 	{
 		this.slots = slots;
@@ -154,9 +156,18 @@ public class GameControl implements ActionListener{
 			turn =true;
 	}
 
-	public void setColor(Color color)
+	public void setColor(int color)
 	{
-		this.color=color;
+		if(color==1)
+		{
+			this.color=Color.red;
+			this.opponentColor=Color.black;
+		}
+		else
+			{
+			this.color=Color.black;
+			this.opponentColor=Color.red;
+			}
 	}
 	public void disableUsersColumnsSubmit()
 	{

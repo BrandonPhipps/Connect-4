@@ -32,6 +32,7 @@ public class GamePanel extends JPanel{
                 slots[row][column].setHorizontalAlignment(SwingConstants.CENTER);
                 slots[row][column].setBorder(new LineBorder(Color.black));
                 slots[row][column].setBackground(Color.white);
+				slots[row][column].setOpaque(true);
                 panel.add(slots[row][column]);
             }
         }

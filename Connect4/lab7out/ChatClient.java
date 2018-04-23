@@ -61,28 +61,20 @@ public class ChatClient extends AbstractClient
 			{
 				this.loginControl.loginSuccess();
 			}
-
 			// If we successfully created an account, tell the create account controller.
 			else if (message.equals("CreateAccountSuccessful"))
 			{
 				this.createAccountControl.createAccountSuccess();
 			}
-			
-			else if (message.equals("Switch Turn"))
-			{
-				gameControl.switchTurn(); 
-
-			}
-			
 			else if (message.equals("Start Game Player 1"))
 			{
 				gameControl.switchTurn();    	
-				gameControl.setColor(Color.red);
+				gameControl.setColor(1);
 				//
 			}
 			else if(message.equals("Player 2 Waiting"))
 			{
-				gameControl.setColor(Color.black);
+				gameControl.setColor(2);
 			}
 
 		}

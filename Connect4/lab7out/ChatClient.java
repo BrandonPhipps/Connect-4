@@ -22,6 +22,10 @@ public class ChatClient extends AbstractClient
   {
     this.createAccountControl = createAccountControl;
   }
+  public void setHomeScreenControl(HomeScreenControl homeScreenControl)
+  {
+	  this.homeScreenControl = homeScreenControl;
+  }
   public void setGameControl(GameControl gameControl) {
 	  this.gameControl = gameControl;
   }

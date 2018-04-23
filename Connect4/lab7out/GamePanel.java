@@ -35,7 +35,9 @@ public class GamePanel extends JPanel{
                 panel.add(slots[row][column]);
             }
         }
-
+        JLabel info=new JLabel("");
+        gc.setSlot(slots);
+        gc.setLabel(info);
         JPanel buttonPanel = new JPanel();
         JButton exitButton = new JButton("Exit");
         exitButton.addActionListener(gc);
@@ -45,6 +47,7 @@ public class GamePanel extends JPanel{
         buttonPanel.add(replayButton);
         //JPanel viewPanel = new JPanel();
         this.setLayout(new BoxLayout(this,BoxLayout.PAGE_AXIS));
+        this.add(info);
         this.add(panel);
         this.add(buttonPanel);
 //        panel.add(buttonPanel);

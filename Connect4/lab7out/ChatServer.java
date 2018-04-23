@@ -163,7 +163,8 @@ public class ChatServer extends AbstractServer
 		}
 		// If we received CreateAccountData, create a new account.
 		else if (arg0 instanceof GameData)
-		{	System.out.println("Server has got Game data");
+		{	
+			System.out.println("Server has got Game data");
 			GameData data = (GameData)arg0;
 			Object result;
 			String userID = ""+arg1.getId();
@@ -171,7 +172,7 @@ public class ChatServer extends AbstractServer
 			String opponent;
 			result = "Switch Turn";
 			
-			if (indexOfUser%2 == 0)
+			if (indexOfUser%2 != 0)
 			{
 				opponent = userids.get(indexOfUser-1);				
 			}
@@ -185,6 +186,10 @@ public class ChatServer extends AbstractServer
 			
 			try
 			{
+				/*ConnectionToClient ctc = Clients.get(opponent);
+				System.out.println(
+				ctc.getName() + "---"+
+				ctc.getState());*/
 				Clients.get(opponent).sendToClient(data);
 				//System.out.println("True or False, User is still connected <" + user.isConnected() + ">\n");
 			}

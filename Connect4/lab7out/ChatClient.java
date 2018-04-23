@@ -1,6 +1,8 @@
 package lab7out;
 
 import ocsf.client.AbstractClient;
+
+import java.awt.Color;
 import java.util.*;
 
 public class ChatClient extends AbstractClient
@@ -61,15 +63,16 @@ public class ChatClient extends AbstractClient
       }
       else if (message.equals("Player 1 Waiting"))
       {
-   
+    	  
       }
       else if (message.equals("Start Game Player 1"))
       {
-     	  gameControl.switchTurn();    	  
+     	  gameControl.switchTurn();    	
+     	 gameControl.setColor(Color.red);
       }
       else if(message.equals("Player 2 Waiting"))
       {
-    	  
+    	  gameControl.setColor(Color.black);
       }
 
     }

@@ -73,6 +73,7 @@ public class ChatClient extends AbstractClient
       {
      	  gameControl.switchTurn();    	
      	 gameControl.setColor(Color.red);
+     	 //
       }
       else if(message.equals("Player 2 Waiting"))
       {

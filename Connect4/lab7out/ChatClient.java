@@ -76,6 +76,10 @@ public class ChatClient extends AbstractClient
 			{
 				gameControl.setColor(2);
 			}
+			else if(message.equals("Lose"));
+			{
+				gameControl.lose();
+			}
 
 		}
 		/*  else if(arg0 instanceof ArrayList) {

@@ -170,7 +170,7 @@ public class ChatServer extends AbstractServer
 			String userID = ""+arg1.getId();
 			int indexOfUser = userids.indexOf(userID);
 			String opponent;
-			result = "Switch Turn";
+			//result = "Switch Turn";
 			
 			if (indexOfUser%2 != 0)
 			{
@@ -240,9 +240,32 @@ public class ChatServer extends AbstractServer
 				}
 				
 			}
-			else if(message.equals("Start Game"))
+			else if(message.equals("Win"))
 			{
+				String userID = ""+arg1.getId();
+				int indexOfUser = userids.indexOf(userID);
+				String opponent;
 				
+				if (indexOfUser%2 != 0)
+				{
+					opponent = userids.get(indexOfUser-1);				
+				}
+				else
+				{
+					opponent = userids.get(indexOfUser+1);	
+				}
+				
+				try
+				{
+
+					Clients.get(opponent).sendToClient("Lose");
+		
+				}
+				catch (IOException e)
+				{
+					e.getStackTrace();
+					return;
+				}
 			}
 					
 		}

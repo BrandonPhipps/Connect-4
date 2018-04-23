@@ -67,7 +67,14 @@ public class GameControl implements ActionListener{
 					--index[num];
 					if(winCheck())
 					{
+						switchTurn();
 						info.setText("You Win");
+						try {
+							user.sendToServer("Win");
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 					else
 					{
@@ -82,7 +89,7 @@ public class GameControl implements ActionListener{
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-						info.setText("Other's turn");
+						
 					}
 				}
 				else
@@ -151,9 +158,16 @@ public class GameControl implements ActionListener{
 	public void switchTurn()
 	{
 		if(turn)
+		{
 			turn =false;
+			info.setText("Other's turn");
+		}
 		else
+		{
+			
 			turn =true;
+			info.setText("Your turn");
+		}
 	}
 
 	public void setColor(int color)
@@ -169,6 +183,13 @@ public class GameControl implements ActionListener{
 			this.opponentColor=Color.red;
 			}
 	}
+	
+	public void lose()
+	{
+		info.setText("Sorry, You Are Lose");
+		
+	}
+	
 	public void disableUsersColumnsSubmit()
 	{
 		//

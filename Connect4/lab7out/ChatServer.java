@@ -164,9 +164,33 @@ public class ChatServer extends AbstractServer
 		// If we received CreateAccountData, create a new account.
 		else if (arg0 instanceof GameData)
 		{
+			GameData data = (GameData)arg0;
+			Object result;
+			String userID = ""+arg1.getId();
+			int indexOfUser = userids.indexOf(userID);
+			String opponent;
+			if (indexOfUser%2 == 0)
+			{
+				opponent = userids.get(indexOfUser-1);				
+			}
+			else
+			{
+				opponent = userids.get(indexOfUser+1);	
+			}
+			
+			try
+			{
+				Clients.get(opponent).sendToClient(data);
+				//System.out.println("True or False, User is still connected <" + user.isConnected() + ">\n");
+			}
+			catch (IOException e)
+			{
+				e.getStackTrace();
+				return;
+			}
 			
 		}
-		// If we received CreateAccountData, create a new account.
+		// If we received String
 		else if (arg0 instanceof String)
 		{
 			String message = (String)arg0;

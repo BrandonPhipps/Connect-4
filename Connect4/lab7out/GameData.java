@@ -33,7 +33,7 @@ public class GameData implements Serializable{
 	public String info(){
 		return info;
 	}
-	public int placement(){
+	public int getPlacement(){
 		return placement;
 	}
 

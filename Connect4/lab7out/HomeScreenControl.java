@@ -19,16 +19,7 @@ public class HomeScreenControl implements ActionListener
 	public HomeScreenControl(JPanel container, ChatClient user)
 	{
 		this.container = container;
-		this.user = user;
-		try
-		{
-			user.sendToServer(homeScreenData);
-		}
-		catch (IOException e)
-		{
-			displayError("Error connecting to server.");
-		}
-		
+		this.user = user;		
 		
 	}
 	public ArrayList<String> getTopTen()
@@ -60,9 +51,11 @@ public class HomeScreenControl implements ActionListener
 			try
 			{
 				user.sendToServer(startGame);
+				//System.out.println("True or False, User is still connected <" + user.isConnected() + ">\n");
 			}
 			catch (IOException e)
 			{
+				e.getStackTrace();
 				displayError("Error connecting to server.");
 			}
 		}

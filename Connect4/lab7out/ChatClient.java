@@ -33,12 +33,21 @@ public class ChatClient extends AbstractClient
   // Method that handles messages from the server.
   public void handleMessageFromServer(Object arg0)
   {
+	  if (arg0 instanceof GameData)
+	  {
+		  GameData data = (GameData)arg0;
+		  Object result;
+		  gameControl.switchTurn();
+		  gameControl.setChecker(data.getPlacement());
+		  
+		  
+	  }
     // If we received a String, figure out what this event is.
     if (arg0 instanceof String)
     {
       // Get the text of the message.
       String message = (String)arg0;
-      loginControl.loginSuccess();
+      //loginControl.loginSuccess();
       // If we successfully logged in, tell the login controller.
       if (message.equals("LoginSuccessful"))
       {
@@ -64,9 +73,9 @@ public class ChatClient extends AbstractClient
       }
 
     }
-    else if(arg0 instanceof ArrayList) {
+  /*  else if(arg0 instanceof ArrayList) {
     	this.homeScreenControl.setTopTen((ArrayList<String>)arg0);
-    }
+    }*/
     
     // If we received an Error, figure out where to display it.
     else if (arg0 instanceof Error)

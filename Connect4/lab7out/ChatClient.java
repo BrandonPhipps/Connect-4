@@ -70,7 +70,7 @@ public class ChatClient extends AbstractClient
       {
    
       }
-      else if (message.equals("Start Game Player 1"))
+   /*   else if (message.equals("Start Game Player 1"))
       {
      	  gameControl.switchTurn();
      	  gameControl.setColor(Color.red);
@@ -79,7 +79,7 @@ public class ChatClient extends AbstractClient
       {
     	  gameControl.setColor(Color.black);
       }
-
+*/
     }
   /*  else if(arg0 instanceof ArrayList) {
     	this.homeScreenControl.setTopTen((ArrayList<String>)arg0);

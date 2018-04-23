@@ -1,8 +1,12 @@
 package lab7out;
 
+<<<<<<< HEAD
 import ocsf.client.AbstractClient;
 
 import java.awt.Color;
+=======
+import ocsf.client.*;
+>>>>>>> branch 'master' of https://github.com/BrandonPhipps/ProjEngine-Lab7out.git
 import java.util.*;
 
 public class ChatClient extends AbstractClient
@@ -68,16 +72,24 @@ public class ChatClient extends AbstractClient
       }
       else if (message.equals("Player 1 Waiting"))
       {
-   
+    	  gameControl.setLabelContent("player 1 waiting");
       }
    /*   else if (message.equals("Start Game Player 1"))
       {
      	  gameControl.switchTurn();
+<<<<<<< HEAD
      	  gameControl.setColor(Color.red);
+=======
+     	  gameControl.setLabelContent("Your Turn");
+>>>>>>> branch 'master' of https://github.com/BrandonPhipps/ProjEngine-Lab7out.git
       }
       else if(message.equals("Player 2 Waiting"))
       {
+<<<<<<< HEAD
     	  gameControl.setColor(Color.black);
+=======
+    	  gameControl.setLabelContent("player 1 waiting");
+>>>>>>> branch 'master' of https://github.com/BrandonPhipps/ProjEngine-Lab7out.git
       }
 */
     }

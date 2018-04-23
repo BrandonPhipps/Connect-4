@@ -34,6 +34,7 @@ public class GameControl implements ActionListener{
 		//True: Player's turn
 		//False: other player's turn
 		//////////////////////////////////////////////////////////
+		user.setGameControl(this);
 	}
 
 	@Override
@@ -52,6 +53,15 @@ public class GameControl implements ActionListener{
 			HomeScreenPanel homeScreenPanel = (HomeScreenPanel)container.getComponent(3);
 			CardLayout cardLayout = (CardLayout)container.getLayout();
 			cardLayout.show(container, "4");
+		}
+		else if(command.equals("Start"))
+		{
+			try {
+				user.sendToServer("Start Game");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		else if(command.equals("0")||command.equals("1")||command.equals("2")||command.equals("3")||command.equals("4")
 				||command.equals("5")||command.equals("6"))
@@ -136,6 +146,11 @@ public class GameControl implements ActionListener{
 		this.info = info;
 	}
 
+	public void setLabelContent(String string)
+	{
+		info.setText(string);
+	}
+	
 	public void setChecker(int column)
 	{
 		slots[column][index[column]].setBackground(color);
@@ -154,6 +169,11 @@ public class GameControl implements ActionListener{
 			turn =true;
 	}
 
+	public void setColor(Color color)
+	{
+		this.color=color;
+	}
+	
 	public void disableUsersColumnsSubmit()
 	{
 		//

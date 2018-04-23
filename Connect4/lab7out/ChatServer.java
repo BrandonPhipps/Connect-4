@@ -6,8 +6,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.HashMap;
 
-import ocsf.server.AbstractServer;
-import ocsf.server.ConnectionToClient;
+import ocsf.server.*;
 
 public class ChatServer extends AbstractServer
 {

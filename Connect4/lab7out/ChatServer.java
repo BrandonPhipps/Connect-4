@@ -170,14 +170,45 @@ public class ChatServer extends AbstractServer
 		else if (arg0 instanceof String)
 		{
 			String message = (String)arg0;
+			int getIndexPlayers;
 			if (message.equals("Start Game"))
 			{
 				userids.add("" +arg1.getId());
+				Object results;
 				if (userids.size()%2 == 0)
 				{
-					int getIndexOfFirstPlayer = userids.indexOf("" +arg1.getId());
-					playersInAMatch.put(userids.get(getIndexOfFirstPlayer-1),userids.get(getIndexOfFirstPlayer));
+					results = "Start Game Player 1";
+					getIndexPlayers = userids.indexOf("" +arg1.getId());
+					playersInAMatch.put(userids.get(getIndexPlayers-1),userids.get(getIndexPlayers));
+					try
+					{
+						Clients.get(userids.get(getIndexPlayers-1)).sendToClient(results);
+					}
+					catch (IOException e)
+					{
+						return;
+					}
+					results = "Player 2 Waiting";
+					
 				}
+				else
+				{
+					results = "Player 1 Waiting";		
+					
+					
+				}
+				try
+				{
+					arg1.sendToClient(results);
+				}
+				catch (IOException e)
+				{
+					return;
+				}
+				
+			}
+			else if(message.equals("Start Game"))
+			{
 				
 			}
 					

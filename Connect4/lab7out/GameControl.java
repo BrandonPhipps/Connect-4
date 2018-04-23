@@ -29,7 +29,7 @@ public class GameControl implements ActionListener{
 			index[i] = 5;
 		}
 		color = Color.red;
-		turn = true; ////////////////////////////////////////////////
+		turn = false; ////////////////////////////////////////////////
 		/////////////////////////////This is the initial status. It can be change
 		//True: Player's turn
 		//False: other player's turn

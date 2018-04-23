@@ -56,6 +56,7 @@ public class HomeScreenControl implements ActionListener
 			cardLayout.show(container, "5");
 			Object startGame;
 			startGame = "Start Game";
+			
 			try
 			{
 				user.sendToServer(startGame);

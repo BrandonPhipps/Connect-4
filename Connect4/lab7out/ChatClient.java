@@ -50,9 +50,19 @@ public class ChatClient extends AbstractClient
       {
         this.createAccountControl.createAccountSuccess();
       }
-      else if (message.equals("Logout")) {
+      else if (message.equals("Player 1 Waiting"))
+      {
+   
+      }
+      else if (message.equals("Start Game Player 1"))
+      {
+     	  gameControl.switchTurn();    	  
+      }
+      else if(message.equals("Player 2 Waiting"))
+      {
     	  
       }
+
     }
     else if(arg0 instanceof ArrayList) {
     	this.homeScreenControl.setTopTen((ArrayList<String>)arg0);

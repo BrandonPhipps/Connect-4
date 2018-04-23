@@ -1,6 +1,8 @@
 package lab7out;
 
 import ocsf.client.AbstractClient;
+
+import java.awt.Color;
 import java.util.*;
 
 public class ChatClient extends AbstractClient
@@ -16,6 +18,11 @@ public class ChatClient extends AbstractClient
   {
     this.loginControl = loginControl;
   }
+  public void setHomeScreenControl(HomeScreenControl homeScreenControl)
+  {
+	  this.homeScreenControl = homeScreenControl;
+  }
+  
   public void setCreateAccountControl(CreateAccountControl createAccountControl)
   {
     this.createAccountControl = createAccountControl;
@@ -65,11 +72,12 @@ public class ChatClient extends AbstractClient
       }
       else if (message.equals("Start Game Player 1"))
       {
-     	  gameControl.switchTurn();    	  
+     	  gameControl.switchTurn();
+     	  gameControl.setColor(Color.red);
       }
       else if(message.equals("Player 2 Waiting"))
       {
-    	  
+    	  gameControl.setColor(Color.black);
       }
 
     }

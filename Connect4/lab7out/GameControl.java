@@ -72,10 +72,10 @@ public class GameControl implements ActionListener{
 					else
 					{
 						///////////Look Here;
-						//switchTurn(); //This Function is to switch the Turn
+						switchTurn(); //This Function is to switch the Turn
 						////////////////////////////////////////////
 						////////////////////////////////////////////
-						GameData data = new GameData("",1,"",num);
+						GameData data = new GameData(num);
 						try {
 							user.sendToServer(data);
 						} catch (IOException e) {

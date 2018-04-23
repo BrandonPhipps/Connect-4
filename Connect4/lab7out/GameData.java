@@ -10,7 +10,7 @@ public class GameData implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private ArrayList<ArrayList<Integer>> board;
+	//private ArrayList<ArrayList<Integer>> board;
 	private String outcome;
 	private int color;
 	private String info;
@@ -63,12 +63,12 @@ public class GameData implements Serializable{
 		this.placement = placement;
 	}
 
-	public GameData(/*ArrayList<ArrayList<Integer>> board,*/ String outcome, int color, String info, int placement){
+	public GameData(  int placement){//String outcome,  String info,
 
 		//setBoard(board);
-		setOutcome(outcome);
-		setColor(color);
-		setInfo(info);
+/*		setOutcome(outcome);
+
+		setInfo(info);*/
 		setPlacement(placement);
 
 	}

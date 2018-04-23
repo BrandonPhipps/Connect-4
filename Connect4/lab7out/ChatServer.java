@@ -99,7 +99,7 @@ public class ChatServer extends AbstractServer
 	{
 		log.append("Client " + client.getId() + " connected\n");
 		Clients.put((""+client.getId()), client); 
-		userids.add("" +client.getId());
+		
 	}
 
 	// When a message is received from a client, handle it.
@@ -162,13 +162,24 @@ public class ChatServer extends AbstractServer
 			}
 		}
 		// If we received CreateAccountData, create a new account.
-		else if (arg0 instanceof CreateAccountData)
+		else if (arg0 instanceof GameData)
 		{
 			
 		}
 		// If we received CreateAccountData, create a new account.
-		else if (arg0 instanceof CreateAccountData)
+		else if (arg0 instanceof String)
 		{
+			String message = (String)arg0;
+			if (message.equals("Start Game"))
+			{
+				userids.add("" +arg1.getId());
+				if (userids.size()%2 == 0)
+				{
+					int getIndexOfFirstPlayer = userids.indexOf("" +arg1.getId());
+					playersInAMatch.put(userids.get(getIndexOfFirstPlayer-1),userids.get(getIndexOfFirstPlayer));
+				}
+				
+			}
 					
 		}
 	}

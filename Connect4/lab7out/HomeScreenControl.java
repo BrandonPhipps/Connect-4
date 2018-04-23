@@ -54,6 +54,16 @@ public class HomeScreenControl implements ActionListener
 			//GamePanel gamePanel = (GamePanel)container.getComponent(4);
 			CardLayout cardLayout = (CardLayout)container.getLayout();
 			cardLayout.show(container, "5");
+			Object startGame;
+			startGame = "Start Game";
+			try
+			{
+				user.sendToServer(startGame);
+			}
+			catch (IOException e)
+			{
+				displayError("Error connecting to server.");
+			}
 		}
 		else if(command.equals("Logout"))
 		{

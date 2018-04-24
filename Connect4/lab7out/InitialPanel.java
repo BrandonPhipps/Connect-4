@@ -19,13 +19,15 @@ public class InitialPanel extends JPanel
     loginButton.addActionListener(ic);
     JPanel loginButtonBuffer = new JPanel();
     loginButtonBuffer.add(loginButton);
+    ic.setLoginButton(loginButton);
     
     // Create the create account button.
     JButton createButton = new JButton("Create");
     createButton.addActionListener(ic);
     JPanel createButtonBuffer = new JPanel();
     createButtonBuffer.add(createButton);
-
+    ic.setCreateButton(createButton);
+    
     // Arrange the components in a grid.
     JPanel grid = new JPanel(new GridLayout(3, 1, 5, 5));
     grid.add(label);

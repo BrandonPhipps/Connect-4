@@ -73,9 +73,17 @@ public class GameControl implements ActionListener{
 					slots[num][index[num]].setBackground(color);
 					slots[num][index[num]].setOpaque(true);
 					--index[num];
+					GameData data;
+					switchTurn();
 					if(winCheck())
 					{
-						switchTurn();
+						data = new GameData(num,false);
+						try {
+							user.sendToServer(data);
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						info.setText("You Win");
 						try {
 							buttonPanel.setVisible(true);
@@ -87,7 +95,14 @@ public class GameControl implements ActionListener{
 					}
 					else if(isDraw())
 					{
-						switchTurn();
+						data = new GameData(num,false);
+						try {
+							user.sendToServer(data);
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
 						info.setText("Draw");
 						try {
 							buttonPanel.setVisible(true);
@@ -99,19 +114,17 @@ public class GameControl implements ActionListener{
 					}
 					else
 					{
-						///////////Look Here;
-						switchTurn(); //This Function is to switch the Turn
-						////////////////////////////////////////////
-						////////////////////////////////////////////
-						GameData data = new GameData(num);
+						
+						data = new GameData(num,true);
 						try {
 							user.sendToServer(data);
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-						
 					}
+					
+
 				}
 				else
 					info.setText("This Column is Full. Choose Another one.");
@@ -121,7 +134,6 @@ public class GameControl implements ActionListener{
 
 	public boolean isDraw()
 	{
-		int num =0;
 		for(int i = 0;i<index.length;i++)
 		{
 			if(index[i]!=-1)

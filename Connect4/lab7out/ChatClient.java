@@ -37,19 +37,23 @@ public class ChatClient extends AbstractClient
 		super("10.252.184.216", 8300);
 	}
 
+	public ChatClient(String host, int port)
+	{
+		super(host, port);
+		// TODO Auto-generated constructor stub
+	}
+	
 	// Method that handles messages from the server.
 	public void handleMessageFromServer(Object arg0)
 	{
 		if (arg0 instanceof GameData)
 		{
-			
-			
 			GameData data = (GameData)arg0;
-			Object result;
 			gameControl.setChecker(data.getPlacement());
-			gameControl.switchTurn();
-
-
+			if(data.getDone())
+			{
+				gameControl.switchTurn();
+			}
 		}
 		// If we received a String, figure out what this event is.
 		if (arg0 instanceof String)
@@ -86,10 +90,13 @@ public class ChatClient extends AbstractClient
 			
 			if(message.equals("GameLose"))
 			{
+			//	gameControl.setChecker(data.getPlacement());
 				gameControl.gameLose();
+				
 			}
 			else if(message.equals("Draw"))
 			{
+				//gameControl.setChecker(data.getPlacement());
 				gameControl.gameDraw();
 			}
 

@@ -128,7 +128,6 @@ public class Database {
 	  public ArrayList<String> getTopTen(){
 		  String query = "select username, wins, losses, draws from players order by wins desc;";
 		   ArrayList<String> toReturn = query(query);
-		   System.out.println("Results =" + toReturn);
 		   return toReturn;
 	  }
 

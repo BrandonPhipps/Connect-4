@@ -17,34 +17,35 @@ public class Database {
 	    public Database()
 	    {
 		    
-		    //Read properties file
-		    Properties prop = new Properties();
-		    FileInputStream fis = null;
-			try {
-				fis = new FileInputStream("lab7out/db.properties");
-			} catch (FileNotFoundException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-		    try {
-				prop.load(fis);
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-		    
-		    String url = prop.getProperty("url");
-		    String user = prop.getProperty("user");
-		    String pass = prop.getProperty("password");
-		    
-		    try
-		    {
-		      //Perform the Connection
-		      con = DriverManager.getConnection(url,user,pass);
-		    } catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+//		    //Read properties file
+//		    Properties prop = new Properties();
+//		    FileInputStream fis = null;
+//			try {
+				String fis = new String("lab7out/db.properties");
+				this.setConnection(fis);
+//			} catch (FileNotFoundException e1) {
+//				// TODO Auto-generated catch block
+//				e1.printStackTrace();
+//			}
+//		    try {
+//				prop.load(fis);
+//			} catch (IOException e1) {
+//				// TODO Auto-generated catch block
+//				e1.printStackTrace();
+//			}
+//		    
+//		    String url = prop.getProperty("url");
+//		    String user = prop.getProperty("user");
+//		    String pass = prop.getProperty("password");
+//		    
+//		    try
+//		    {
+//		      //Perform the Connection
+//		      con = DriverManager.getConnection(url,user,pass);
+//		    } catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 	    }
 	    
 	    public ArrayList<String> query(String query)
@@ -130,6 +131,39 @@ public class Database {
 		   ArrayList<String> toReturn = query(query);
 		   return toReturn;
 	  }
+	  public void setConnection(String fn) {
+			 //Read properties file
+		    Properties prop = new Properties();
+		    FileInputStream fis = null;
+			try {
+				fis = new FileInputStream(fn);
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		    try {
+				prop.load(fis);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		    
+		    String url = prop.getProperty("url");
+		    String user = prop.getProperty("user");
+		    String pass = prop.getProperty("password");
+		    
+		    try
+		    {
+		      //Perform the Connection
+		      con = DriverManager.getConnection(url,user,pass);
+		    } catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	  public Connection getConnection() {
+			return con;
+		}
 
 }
 	

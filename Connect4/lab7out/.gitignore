@@ -25,3 +25,5 @@
 /User.class
 /DatabaseTest.class
 /GameControlTest.class
+/ClientGUITest.class
+/InitialControlTest.class

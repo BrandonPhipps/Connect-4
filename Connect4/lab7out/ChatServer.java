@@ -296,6 +296,18 @@ public class ChatServer extends AbstractServer
 					return;
 				}
 			}
+			else if(message.equals("Get Top Ten")) {
+	    		Object result;
+	    		result = database.getTopTen();
+	    		try
+	    		{
+	    			arg1.sendToClient(result);
+	    		}
+	    		catch (IOException e)
+	    		{
+	    			return;
+	    		}
+	    	}
 					
 		}
 	}

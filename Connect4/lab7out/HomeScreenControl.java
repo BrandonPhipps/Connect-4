@@ -1,37 +1,58 @@
 package lab7out;
 
+
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 public class HomeScreenControl implements ActionListener
 {
 	private JPanel container;
 	private ChatClient user;
-	private ArrayList<String> topTen = new ArrayList<String>();
 	private HomeScreenData homeScreenData;
+	private JTextArea textArea;
 
 	// Constructor for the HomeScreen controller.
 	public HomeScreenControl(JPanel container, ChatClient user)
 	{
 		this.container = container;
-		this.user = user;		
-		
+		this.user = user;
+		ArrayList<String> blank = new ArrayList<String>();
+		blank.add("[");
+		homeScreenData = new HomeScreenData(" ", 0, 0, 0, blank);
 	}
-	public ArrayList<String> getTopTen()
-	{
-		return topTen;
+	public ArrayList<String> getTopTen() {
+		return homeScreenData.getTopTen();
+	}
+	public void setTextArea(JTextArea textArea) {
+		this.textArea = textArea;
 	}
 	
 	public void setTopTen(ArrayList<String> topTen)
 	{
+		
+		homeScreenData.setTopTen(topTen);
+		String temp = new String("Username\tWins\tLosses\tDraws\n----------------------------------------------------------------------------\n");
 		for(String list: topTen) {
-				this.topTen.add(list); 
+			temp += list.replaceAll(" ", "\t") + "\n";
 		}
+		textArea.setText(temp);
+	}
+	public HomeScreenData getHomeScreenData() {
+		return homeScreenData;
+	}
+	public void setHomeScreenData(HomeScreenData hsd) {
+		homeScreenData.setUsername(hsd.getUsername());
+		homeScreenData.setWin(hsd.getWin());
+		homeScreenData.setLose(hsd.getLose());
+		homeScreenData.setDraw(hsd.getDraw());
+		homeScreenData.setTopTen(hsd.getTopTen());
 	}
 
 	public void actionPerformed(ActionEvent ae)
@@ -62,6 +83,19 @@ public class HomeScreenControl implements ActionListener
 		else if(command.equals("Logout"))
 		{
 			//InitialPanel InitialPanel = (InitialPanel)container.getComponent(0);
+			String result = "Logout";
+			try
+			{
+				user.sendToServer(result);
+				CardLayout cardLayout = (CardLayout)container.getLayout();
+				cardLayout.show(container, "1");
+			}
+			catch (IOException e)
+			{
+				e.printStackTrace();
+				displayError("Error connecting to server.");
+			}
+			
 			CardLayout cardLayout = (CardLayout)container.getLayout();
 			cardLayout.show(container, "1");
 		}

@@ -9,7 +9,7 @@ public class ClientGUI extends JFrame
   
   
   // Constructor that creates the client GUI.
-  public ClientGUI(String[] args)
+  public ClientGUI()
   {
     // Set up the chat client.
     ChatClient client = new ChatClient();
@@ -81,6 +81,6 @@ public class ClientGUI extends JFrame
   // Main function that creates the client GUI when the program is started.
   public static void main(String[] args)
   {
-    new ClientGUI(args);
+    new ClientGUI();
   }
 }

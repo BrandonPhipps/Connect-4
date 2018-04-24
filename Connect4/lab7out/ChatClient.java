@@ -36,6 +36,12 @@ public class ChatClient extends AbstractClient
 		super("localhost", 8300);
 	}
 
+	public ChatClient(String host, int port)
+	{
+		super(host, port);
+		// TODO Auto-generated constructor stub
+	}
+	
 	// Method that handles messages from the server.
 	public void handleMessageFromServer(Object arg0)
 	{

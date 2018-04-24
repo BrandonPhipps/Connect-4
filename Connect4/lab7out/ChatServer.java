@@ -27,6 +27,12 @@ public class ChatServer extends AbstractServer
 		this.setTimeout(500);
 		Clients = new HashMap<String, ConnectionToClient>();
 	}
+	public ChatServer(int port,int timeout)
+	{
+		  super(port);
+		  this.setTimeout(timeout);
+	}
+	
 	public ConnectionToClient getClients(String clientID) {
 
 		return Clients.get(clientID);
@@ -284,7 +290,7 @@ public class ChatServer extends AbstractServer
 				}
 				try
 				{
-
+					
 					Clients.get(opponent).sendToClient("Draw");
 					userids.clear();
 					playersInAMatch.clear();

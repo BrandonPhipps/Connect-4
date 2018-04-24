@@ -85,6 +85,18 @@ public class GameControl implements ActionListener{
 							e.printStackTrace();
 						}
 					}
+					else if(isDraw())
+					{
+						switchTurn();
+						info.setText("Draw");
+						try {
+							buttonPanel.setVisible(true);
+							user.sendToServer("Draw");
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
 					else
 					{
 						///////////Look Here;
@@ -107,6 +119,19 @@ public class GameControl implements ActionListener{
 		}
 	}
 
+	public boolean isDraw()
+	{
+		int num =0;
+		for(int i = 0;i<index.length;i++)
+		{
+			if(index[i]!=0)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	public boolean winCheck()
 	{
 		int HEIGHT = 6;
@@ -217,6 +242,11 @@ public class GameControl implements ActionListener{
 		buttonPanel.setVisible(true);
 	}
 	
+	public void gameDraw()
+	{
+		info.setText("Draw");
+		buttonPanel.setVisible(true);
+	}
 	
 	public void disableUsersColumnsSubmit()
 	{

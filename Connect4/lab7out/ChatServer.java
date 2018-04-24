@@ -170,7 +170,6 @@ public class ChatServer extends AbstractServer
 		// If we received CreateAccountData, create a new account.
 		else if (arg0 instanceof GameData)
 		{	
-			System.out.println("Server has got Game data");
 			GameData data = (GameData)arg0;
 			Object result;
 			String userID = ""+arg1.getId();
@@ -191,12 +190,9 @@ public class ChatServer extends AbstractServer
 			
 			try
 			{
-				/*ConnectionToClient ctc = Clients.get(opponent);
-				System.out.println(
-				ctc.getName() + "---"+
-				ctc.getState());*/
+				
 				Clients.get(opponent).sendToClient(data);
-				//System.out.println("True or False, User is still connected <" + user.isConnected() + ">\n");
+				
 			}
 			catch (IOException e)
 			{
@@ -247,9 +243,13 @@ public class ChatServer extends AbstractServer
 			}
 			else if(message.equals("PlayerWin"))
 			{
+				
+				
 				String userID = ""+arg1.getId();
 				int indexOfUser = userids.indexOf(userID);
 				String opponent;
+				
+				
 				
 				if (indexOfUser%2 != 0)
 				{
@@ -273,6 +273,16 @@ public class ChatServer extends AbstractServer
 					e.getStackTrace();
 					return;
 				}
+				
+				String winnerUpdate = "update players set wins = wins+1 where username = " + "'" + getIdsAndUsername(userID) + "'";
+				String loserUpdate = "update players set losses  = losses+1 where username ="+ "'" + getIdsAndUsername(opponent) + "'";
+				database.executeDML(winnerUpdate);
+				database.executeDML(loserUpdate);
+				
+						
+				
+				
+				
 			}
 			else if(message.equals("Draw"))
 			{
@@ -301,7 +311,25 @@ public class ChatServer extends AbstractServer
 					e.getStackTrace();
 					return;
 				}
+				String updateDrawPlayer = "update players set draws = draws+1 where username = " + "'" + getIdsAndUsername(userID) + "'";
+				String updateDrawOpponent = "update players set draws = draws+1 where username = " + "'" + getIdsAndUsername(opponent) + "'";
+				
+				database.executeDML(updateDrawPlayer);
+				database.executeDML(updateDrawOpponent);
+				
 			}
+			else if(message.equals("Get Top Ten")) {
+	    		Object result;
+	    		result = database.getTopTen();
+	    		try
+	    		{
+	    			arg1.sendToClient(result);
+	    		}
+	    		catch (IOException e)
+	    		{
+	    			return;
+	    		}
+	    	}
 					
 		}
 	}

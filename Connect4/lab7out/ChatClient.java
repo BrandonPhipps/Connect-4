@@ -85,10 +85,12 @@ public class ChatClient extends AbstractClient
 			
 			if(message.equals("GameLose"))
 			{
+			//	gameControl.setChecker(data.getPlacement());
 				gameControl.gameLose();
 			}
 			else if(message.equals("Draw"))
 			{
+				//gameControl.setChecker(data.getPlacement());
 				gameControl.gameDraw();
 			}
 

@@ -48,14 +48,12 @@ public class ChatClient extends AbstractClient
 	{
 		if (arg0 instanceof GameData)
 		{
-			
-			
 			GameData data = (GameData)arg0;
-			Object result;
 			gameControl.setChecker(data.getPlacement());
-			gameControl.switchTurn();
-
-
+			if(data.getDone())
+			{
+				gameControl.switchTurn();
+			}
 		}
 		// If we received a String, figure out what this event is.
 		if (arg0 instanceof String)
@@ -94,6 +92,7 @@ public class ChatClient extends AbstractClient
 			{
 			//	gameControl.setChecker(data.getPlacement());
 				gameControl.gameLose();
+				
 			}
 			else if(message.equals("Draw"))
 			{

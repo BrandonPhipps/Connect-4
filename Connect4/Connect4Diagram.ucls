@@ -91,16 +91,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="lab7out.DatabaseFile" project="Connect4" 
-    file="/Connect4/lab7out/DatabaseFile.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="214" width="264" x="2251" y="-48"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="12" language="java" name="lab7out.HomeScreenControl" project="Connect4" 
+  <class id="11" language="java" name="lab7out.HomeScreenControl" project="Connect4" 
     file="/Connect4/lab7out/HomeScreenControl.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="358" width="282" x="3474" y="982"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -109,7 +100,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="lab7out.InitialPanel" project="Connect4" 
+  <class id="12" language="java" name="lab7out.InitialPanel" project="Connect4" 
     file="/Connect4/lab7out/InitialPanel.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="88" width="168" x="2555" y="-48"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -118,7 +109,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="lab7out.ChatClient" project="Connect4" file="/Connect4/lab7out/ChatClient.java" 
+  <class id="13" language="java" name="lab7out.ChatClient" project="Connect4" file="/Connect4/lab7out/ChatClient.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="196" width="332" x="3635" y="458"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -127,7 +118,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="lab7out.InitialControl" project="Connect4" 
+  <class id="14" language="java" name="lab7out.InitialControl" project="Connect4" 
     file="/Connect4/lab7out/InitialControl.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="232" width="223" x="3372" y="-48"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -136,7 +127,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="lab7out.Database" project="Connect4" file="/Connect4/lab7out/Database.java" 
+  <class id="15" language="java" name="lab7out.Database" project="Connect4" file="/Connect4/lab7out/Database.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="250" width="264" x="3139" y="982"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -145,7 +136,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="lab7out.LoginControl" project="Connect4" 
+  <class id="16" language="java" name="lab7out.LoginControl" project="Connect4" 
     file="/Connect4/lab7out/LoginControl.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="448" width="223" x="3635" y="-48"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -154,7 +145,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="lab7out.ChatServer" project="Connect4" file="/Connect4/lab7out/ChatServer.java" 
+  <class id="17" language="java" name="lab7out.ChatServer" project="Connect4" file="/Connect4/lab7out/ChatServer.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="484" width="367" x="2751" y="458"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -163,7 +154,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="19" language="java" name="lab7out.GameData" project="Connect4" file="/Connect4/lab7out/GameData.java" 
+  <class id="18" language="java" name="lab7out.GameData" project="Connect4" file="/Connect4/lab7out/GameData.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="304" width="165" x="2763" y="-48"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -172,7 +163,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="20" language="java" name="lab7out.ClientGUI" project="Connect4" file="/Connect4/lab7out/ClientGUI.java" 
+  <class id="19" language="java" name="lab7out.ClientGUI" project="Connect4" file="/Connect4/lab7out/ClientGUI.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="106" width="131" x="2968" y="-48"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -181,7 +172,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="21" language="java" name="lab7out.ServerGUI.EventHandler" project="Connect4" 
+  <class id="20" language="java" name="lab7out.ServerGUI.EventHandler" project="Connect4" 
     file="/Connect4/lab7out/ServerGUI.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="106" width="223" x="3179" y="458"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -190,7 +181,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="lab7out.GameControl" project="Connect4" file="/Connect4/lab7out/GameControl.java" 
+  <class id="21" language="java" name="lab7out.GameControl" project="Connect4" file="/Connect4/lab7out/GameControl.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="466" width="227" x="3898" y="-48"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -199,113 +190,165 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="23">    
-    <end type="SOURCE" refId="22" navigable="false">      
-      <attribute id="24" name="user"/>      
-      <multiplicity id="25" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="26">    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="27" name="database"/>      
-      <multiplicity id="28" minimum="0" maximum="1"/>    
+  <association id="22">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="23" name="loginControl">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="24" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="16" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="29">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="30" name="client"/>      
-      <multiplicity id="31" minimum="0" maximum="1"/>    
+  <association id="25">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="26" name="user">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="27" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
+    <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <nesting id="32">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="21"/>  
-  </nesting>  
-  <association id="33">    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="34" name="user"/>      
-      <multiplicity id="35" minimum="0" maximum="1"/>    
+  <association id="28">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="29" name="homeScreenControl">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="30" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
+    <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="36">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="37" name="homeScreenControl"/>      
-      <multiplicity id="38" minimum="0" maximum="1"/>    
+  <association id="31">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="32" name="user">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="33" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
+    <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="39">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="40" name="createAccountControl"/>      
-      <multiplicity id="41" minimum="0" maximum="1"/>    
+  <association id="34">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="35" name="createAccountControl">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="36" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="42">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="43" name="client"/>      
-      <multiplicity id="44" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="45">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="46" name="server"/>      
-      <multiplicity id="47" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="18" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="48">    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="49" name="homeScreenData"/>      
-      <multiplicity id="50" minimum="0" maximum="1"/>    
+  <association id="37">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="38" name="homeScreenData">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="39" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="10" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="51">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="52" name="client"/>      
-      <multiplicity id="53" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="54">    
+  <association id="40">    
     <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="55" name="gameControl"/>      
-      <multiplicity id="56" minimum="0" maximum="1"/>    
+      <attribute id="41" name="client">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="42" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
+    <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="57">    
+  <association id="43">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="44" name="database">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="45" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="46">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="20"/>  
+  </nesting>  
+  <association id="47">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="48" name="gameControl">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="49" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="50">    
     <bendpoint x="3148" y="458"/>    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="58" name="database"/>      
-      <multiplicity id="59" minimum="0" maximum="1"/>    
+      <attribute id="51" name="database">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="52" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
+    <end type="TARGET" refId="15" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="60">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="61" name="loginControl"/>      
-      <multiplicity id="62" minimum="0" maximum="1"/>    
+  <association id="53">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="54" name="server">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="55" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="56">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="57" name="client">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="58" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="59">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="60" name="client">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="61" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

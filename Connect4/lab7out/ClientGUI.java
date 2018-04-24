@@ -11,9 +11,9 @@ public class ClientGUI extends JFrame
   // Constructor that creates the client GUI.
   public ClientGUI(String[] args)
   {
-    // Set up the chat client.
+	 // Set up the chat client.
     ChatClient client = new ChatClient();
-    client.setHost("localhost");
+    client.setHost("10.251.216.254");
     //client.setHost(args[0]);
     client.setPort(8300);
     try

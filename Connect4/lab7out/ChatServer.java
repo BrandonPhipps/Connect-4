@@ -284,13 +284,6 @@ public class ChatServer extends AbstractServer
 			}
 			else if(message.equals("Draw"))
 			{
-				String updateDraw = "";
-				
-				database.executeDML("");
-				
-			}
-			else if(message.equals("Draw"))
-			{
 				String userID = ""+arg1.getId();
 				int indexOfUser = userids.indexOf(userID);
 				String opponent;
@@ -316,6 +309,12 @@ public class ChatServer extends AbstractServer
 					e.getStackTrace();
 					return;
 				}
+				String updateDrawPlayer = "update players set draws = draws+1 where username = " + "'" + getIdsAndUsername(userID) + "'";
+				String updateDrawOpponent = "update players set draws = draws+1 where username = " + "'" + getIdsAndUsername(opponent) + "'";
+				
+				database.executeDML(updateDrawPlayer);
+				database.executeDML(updateDrawOpponent);
+				
 			}
 					
 		}

@@ -50,7 +50,7 @@ public class HomeScreenPanel extends JPanel{
 
 		//setLayout(null);
 		topTenArea = new JTextArea(10,50);
-		
+		hc.setTextArea(topTenArea);
 		JLabel topTenLabel = new JLabel("Top Ten", JLabel.CENTER);
 		JPanel topTenPanel = new JPanel(new BorderLayout());
 		JPanel topTenLabelBuffer = new JPanel();

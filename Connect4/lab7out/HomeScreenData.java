@@ -1,36 +1,39 @@
 package lab7out;
 
 import java.io.Serializable;
+import java.util.*;
 
 public class HomeScreenData implements Serializable {
-	private int lose;
-	private int win;
-	private int draw;
-	private String topTen[];
+	private Integer lose;
+	private Integer win;
+	private Integer draw;
+	private ArrayList<String> topTen;
 	private String username;
-	public int getLose() {
+	public Integer getLose() {
 		return lose;
 	}
-	public void setLose(int lose) {
+	public void setLose(Integer lose) {
 		this.lose = lose;
 	}
-	public int getWin() {
+	public Integer getWin() {
 		return win;
 	}
-	public void setWin(int win) {
+	public void setWin(Integer win) {
 		this.win = win;
 	}
-	public int getDraw() {
+	public Integer getDraw() {
 		return draw;
 	}
-	public void setDraw(int draw) {
+	public void setDraw(Integer draw) {
 		this.draw = draw;
 	}
-	public String[] getTopTen() {
+	public ArrayList<String> getTopTen() {
 		return topTen;
 	}
-	public void setTopTen(String[] topTen) {
-		this.topTen = topTen;
+	public void setTopTen(ArrayList<String> topTen) {
+		for(String list: topTen) {
+			this.topTen.add(list);	
+		}
 	}
 	public String getUsername() {
 		return username;
@@ -39,15 +42,14 @@ public class HomeScreenData implements Serializable {
 		this.username = username;
 	}
 	 
-	 public HomeScreenData(String username, int win, int lose, int draw, String[] topTen)
+	 public HomeScreenData(String username, Integer win, Integer lose, Integer draw, ArrayList<String> topTen)
 	 {
+		 this.topTen = new ArrayList<String>();
 		 setUsername(username);
 		 setWin(win);
 		 setLose(lose);
 		 setDraw(draw);
 		 setTopTen(topTen);
 	 }
-	
-	
-
 }
+	

@@ -3,6 +3,7 @@ package lab7out;
 import ocsf.client.AbstractClient;
 
 import java.awt.Color;
+import java.io.IOException;
 import java.util.*;
 
 public class ChatClient extends AbstractClient
@@ -41,7 +42,7 @@ public class ChatClient extends AbstractClient
 	{
 		if (arg0 instanceof GameData)
 		{
-			System.out.println("Client recieved game data");
+			
 			
 			GameData data = (GameData)arg0;
 			Object result;
@@ -60,6 +61,12 @@ public class ChatClient extends AbstractClient
 			if (message.equals("LoginSuccessful"))
 			{
 				this.loginControl.loginSuccess();
+				 try {
+						this.sendToServer("Get Top Ten");
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 			}
 			// If we successfully created an account, tell the create account controller.
 			else if (message.equals("CreateAccountSuccessful"))
@@ -87,9 +94,9 @@ public class ChatClient extends AbstractClient
 			}
 
 		}
-		/*  else if(arg0 instanceof ArrayList) {
-    	this.homeScreenControl.setTopTen((ArrayList<String>)arg0);
-    }*/
+		 else if (arg0 instanceof ArrayList) {
+		    	homeScreenControl.setTopTen((ArrayList<String>)arg0);
+		    }
 
 		// If we received an Error, figure out where to display it.
 		else if (arg0 instanceof Error)

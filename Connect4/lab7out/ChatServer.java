@@ -99,7 +99,7 @@ public class ChatServer extends AbstractServer
 	{
 		log.append("Client " + client.getId() + " connected\n");
 		Clients.put((""+client.getId()), client); 
-		
+
 	}
 
 	// When a message is received from a client, handle it.
@@ -170,7 +170,7 @@ public class ChatServer extends AbstractServer
 			int indexOfUser = userids.indexOf(userID);
 			String opponent;
 			//result = "Switch Turn";
-			
+
 			if (indexOfUser%2 != 0)
 			{
 				opponent = userids.get(indexOfUser-1);				
@@ -179,22 +179,22 @@ public class ChatServer extends AbstractServer
 			{
 				opponent = userids.get(indexOfUser+1);	
 			}
-			
-			
-			
+
+
+
 			try
 			{
-				
+
 				Clients.get(opponent).sendToClient(data);
-				
+
 			}
 			catch (IOException e)
 			{
 				e.getStackTrace();
 				return;
 			}
-			
-			
+
+
 		}
 		// If we received String
 		else if (arg0 instanceof String)
@@ -223,7 +223,7 @@ public class ChatServer extends AbstractServer
 				else
 				{
 					results = "Player 1 Waiting";					
-					
+
 				}
 				try
 				{
@@ -233,18 +233,18 @@ public class ChatServer extends AbstractServer
 				{
 					return;
 				}
-				
+
 			}
 			else if(message.equals("PlayerWin"))
 			{
-				
-				
+
+
 				String userID = ""+arg1.getId();
 				int indexOfUser = userids.indexOf(userID);
 				String opponent;
-				
-				
-				
+
+
+
 				if (indexOfUser%2 != 0)
 				{
 					opponent = userids.get(indexOfUser-1);				
@@ -253,37 +253,37 @@ public class ChatServer extends AbstractServer
 				{
 					opponent = userids.get(indexOfUser+1);	
 				}
-				
+
 				try
 				{
 
 					Clients.get(opponent).sendToClient("GameLose");
 					userids.clear();
 					playersInAMatch.clear();
-		
+
 				}
 				catch (IOException e)
 				{
 					e.getStackTrace();
 					return;
 				}
-				
+
 				String winnerUpdate = "update players set wins = wins+1 where username = " + "'" + getIdsAndUsername(userID) + "'";
 				String loserUpdate = "update players set losses  = losses+1 where username ="+ "'" + getIdsAndUsername(opponent) + "'";
 				database.executeDML(winnerUpdate);
 				database.executeDML(loserUpdate);
-				
-						
-				
-				
-				
+
+
+
+
+
 			}
 			else if(message.equals("Draw"))
 			{
 				String userID = ""+arg1.getId();
 				int indexOfUser = userids.indexOf(userID);
 				String opponent;
-				
+
 				if (indexOfUser%2 != 0)
 				{
 					opponent = userids.get(indexOfUser-1);				
@@ -298,7 +298,7 @@ public class ChatServer extends AbstractServer
 					Clients.get(opponent).sendToClient("Draw");
 					userids.clear();
 					playersInAMatch.clear();
-		
+
 				}
 				catch (IOException e)
 				{
@@ -307,24 +307,29 @@ public class ChatServer extends AbstractServer
 				}
 				String updateDrawPlayer = "update players set draws = draws+1 where username = " + "'" + getIdsAndUsername(userID) + "'";
 				String updateDrawOpponent = "update players set draws = draws+1 where username = " + "'" + getIdsAndUsername(opponent) + "'";
-				
+
 				database.executeDML(updateDrawPlayer);
 				database.executeDML(updateDrawOpponent);
-				
+
 			}
 			else if(message.equals("Get Top Ten")) {
-	    		Object result;
-	    		result = database.getTopTen();
-	    		try
-	    		{
-	    			arg1.sendToClient(result);
-	    		}
-	    		catch (IOException e)
-	    		{
-	    			return;
-	    		}
-	    	}
-					
+				Object result;
+				result = database.getTopTen();
+				try
+				{
+					arg1.sendToClient(result);
+				}
+				catch (IOException e)
+				{
+					return;
+				}
+			}
+			else if(message.equals("Logout"))
+			{
+				userids.remove(""+arg1.getId());
+
+			}
+
 		}
 	}
 

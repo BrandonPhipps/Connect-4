@@ -289,6 +289,34 @@ public class ChatServer extends AbstractServer
 				database.executeDML("");
 				
 			}
+			else if(message.equals("Draw"))
+			{
+				String userID = ""+arg1.getId();
+				int indexOfUser = userids.indexOf(userID);
+				String opponent;
+				
+				if (indexOfUser%2 != 0)
+				{
+					opponent = userids.get(indexOfUser-1);				
+				}
+				else
+				{
+					opponent = userids.get(indexOfUser+1);	
+				}
+				try
+				{
+
+					Clients.get(opponent).sendToClient("Draw");
+					userids.clear();
+					playersInAMatch.clear();
+		
+				}
+				catch (IOException e)
+				{
+					e.getStackTrace();
+					return;
+				}
+			}
 					
 		}
 	}

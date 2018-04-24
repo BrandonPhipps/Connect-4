@@ -81,6 +81,10 @@ public class ChatClient extends AbstractClient
 			{
 				gameControl.gameLose();
 			}
+			else if(message.equals("Draw"))
+			{
+				gameControl.gameDraw();
+			}
 
 		}
 		/*  else if(arg0 instanceof ArrayList) {

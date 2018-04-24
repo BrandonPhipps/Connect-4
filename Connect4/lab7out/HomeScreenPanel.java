@@ -27,16 +27,6 @@ public class HomeScreenPanel extends JPanel{
 	{
 		this.recordArea = recordArea;
 	}
-
-	public JTextArea getTop5Area()
-	{
-		return top5Area;
-	}
-
-	public void setTop5Area(JTextArea top5Area)
-	{
-		this.top5Area = top5Area;
-	}
 	public String getUsername()
 	{
 		return username;
@@ -70,12 +60,14 @@ public class HomeScreenPanel extends JPanel{
 	    // Create the login button.
 		JButton joinButton = new JButton("Join a Game");
 		joinButton.addActionListener(hc);
+		hc.setJoinGame(joinButton);
 	    JPanel ButtonBuffer = new JPanel(new BorderLayout());
 	    ButtonBuffer.add(joinButton, BorderLayout.NORTH);
 	    
 	    // Create the create account button.
 	    JButton logoutButton = new JButton("Logout");
 	    logoutButton.addActionListener(hc);
+	    hc.setLogOut(logoutButton);
 	    ButtonBuffer.add(logoutButton, BorderLayout.SOUTH);
 	    
 
@@ -86,46 +78,7 @@ public class HomeScreenPanel extends JPanel{
 	    this.add(grid);
 	    //************************************
 	    //************************************
-	    
-
-		/*JLabel name = new JLabel();
-		name.setBounds(50, 50, 50, 50);
-		name.setText(username);
-		add(name);
-
-		JLabel recordLabel = new JLabel("Your Personal Record");
-		recordLabel.setBounds(302, 11, 125, 14);
-		add(recordLabel);
-
-		JLabel top5Label = new JLabel("Top 10 Players");
-		top5Label.setBounds(320, 107, 120, 14);
-		add(top5Label);
-
-		JButton joinButton = new JButton("Join a Game");
-		joinButton.setBounds(99, 77, 120, 23);
-		joinButton.addActionListener(hc);
-		add(joinButton);
-
-		JButton logoutButton = new JButton("Logout");
-		logoutButton.setBounds(115, 136, 89, 23);
-		logoutButton.addActionListener(hc);
-		add(logoutButton);
-
-		recordArea = new JTextArea();
-		recordArea.setBounds(293, 39, 123, 43);
-		add(recordArea);
-
-		JScrollPane scrollPaneRecord = new JScrollPane(recordArea);
-		scrollPaneRecord.setBounds(293, 39, 123, 43);
-		add(scrollPaneRecord);
-
-		top5Area = new JTextArea();
-		top5Area.setBounds(293, 132, 125, 134);
-		add(top5Area);
-
-		JScrollPane scrollPaneTop5 = new JScrollPane(top5Area);
-		scrollPaneTop5.setBounds(293, 132, 125, 134);
-		add(scrollPaneTop5);*/
+	
 	}
 
 

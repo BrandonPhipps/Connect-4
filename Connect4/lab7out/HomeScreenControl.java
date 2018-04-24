@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JButton;
 
 public class HomeScreenControl implements ActionListener
 {
@@ -17,6 +18,8 @@ public class HomeScreenControl implements ActionListener
 	private ChatClient user;
 	private HomeScreenData homeScreenData;
 	private JTextArea textArea;
+	private JButton joinGame;
+	private JButton logOut;
 
 	// Constructor for the HomeScreen controller.
 	public HomeScreenControl(JPanel container, ChatClient user)
@@ -32,6 +35,18 @@ public class HomeScreenControl implements ActionListener
 	}
 	public void setTextArea(JTextArea textArea) {
 		this.textArea = textArea;
+	}
+	public void setJoinGame(JButton joinGame) {
+		this.joinGame = joinGame;
+	}
+	public void setLogOut(JButton logOut) {
+		this.logOut = logOut;
+	}
+	public JButton getJoinGame() {
+		return joinGame;
+	}
+	public JButton getLogOut() {
+		return logOut;
 	}
 	
 	public void setTopTen(ArrayList<String> topTen)

@@ -23,6 +23,14 @@ public class LoginPanel extends JPanel
     return new String(passwordField.getPassword());
   }
   
+  public void setUsername(String u) {
+	  usernameField.setText(u);
+  }
+  
+  public void setPassword(String p) {
+	  passwordField.setText(p);
+  }
+  
   // Setter for the error text.
   public void setError(String error)
   {
@@ -48,8 +56,10 @@ public class LoginPanel extends JPanel
     JPanel loginPanel = new JPanel(new GridLayout(2, 2, 5, 5));
     JLabel usernameLabel = new JLabel("Username:", JLabel.RIGHT);
     usernameField = new JTextField(10);
+    lc.setUserTextField(usernameField);
     JLabel passwordLabel = new JLabel("Password:", JLabel.RIGHT);
     passwordField = new JPasswordField(10);
+    lc.setPassTextField(passwordField);
     loginPanel.add(usernameLabel);
     loginPanel.add(usernameField);
     loginPanel.add(passwordLabel);
@@ -59,8 +69,10 @@ public class LoginPanel extends JPanel
     JPanel buttonPanel = new JPanel();
     JButton submitButton = new JButton("Submit");
     submitButton.addActionListener(lc);
+    lc.setSubmitButton(submitButton);
     JButton cancelButton = new JButton("Cancel");
-    cancelButton.addActionListener(lc);    
+    cancelButton.addActionListener(lc);
+    lc.setCancelButton(cancelButton);
     buttonPanel.add(submitButton);
     buttonPanel.add(cancelButton);
 

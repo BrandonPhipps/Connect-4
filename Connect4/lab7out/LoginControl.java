@@ -10,6 +10,63 @@ public class LoginControl implements ActionListener
   // Private data fields for the container and chat client.
   private JPanel container;
   private ChatClient client;
+  private JTextField usernameField;
+  private JTextField passwordField;
+  private JButton submitButton;
+  private JButton cancelButton;
+  
+  
+  
+  public String getUsername()
+  {
+    return usernameField.getText();
+  }
+  
+  // Getter for the text in the password field.
+  public String getPassword()
+  {
+    return new String(passwordField.getText());
+  }
+  
+  public void setUsername(String u) {
+	  usernameField.setText(u);
+  }
+  
+  public void setPassword(String p) {
+	  passwordField.setText(p);
+  }
+  
+  public void setUserTextField(JTextField usernameField) {
+	  this.usernameField = usernameField;
+  }
+  
+public void setPassTextField(JTextField passwordField) {
+	  this.passwordField = passwordField;
+  }
+  
+  public JTextField getUserTextField() {
+	  return usernameField;
+  }
+  public JTextField getPassTextField() {
+	  return passwordField;
+  }
+  
+  public void setSubmitButton(JButton submitButton) {
+	  
+  }
+  
+  public void setCancelButton(JButton cancelButton) {
+	  
+  }
+  
+  public JButton getSubmitButton() {
+	return submitButton;  
+  }
+  
+ public JButton getCancelButton() {
+	  return cancelButton;
+  }
+  
   
   // Constructor for the login controller.
   public LoginControl(JPanel container, ChatClient client)

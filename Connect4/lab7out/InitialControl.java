@@ -9,7 +9,22 @@ public class InitialControl implements ActionListener
   // Private data field for storing the container.
   private JPanel container;
   private ChatClient client;
+  private JButton loginButton;
+  private JButton createButton;
   // Constructor for the initial controller.
+  
+  public void setLoginButton(JButton loginButton) {
+		this.loginButton = loginButton;
+	}
+	public void setCreateButton(JButton createButton) {
+		this.createButton = createButton;
+	}
+	public JButton getLoginButton() {
+		return loginButton;
+	}
+	public JButton getCreateButton() {
+		return createButton;
+	}
   public InitialControl(JPanel container, ChatClient client)
   {
     this.container = container;

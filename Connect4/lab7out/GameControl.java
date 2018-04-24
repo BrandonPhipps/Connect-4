@@ -58,6 +58,12 @@ public class GameControl implements ActionListener{
 		else if(command.equals("Exit"))
 		{
 			HomeScreenPanel homeScreenPanel = (HomeScreenPanel)container.getComponent(3);
+			 try {
+					user.sendToServer("Get Top Ten");
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			CardLayout cardLayout = (CardLayout)container.getLayout();
 			cardLayout.show(container, "4");
 		}

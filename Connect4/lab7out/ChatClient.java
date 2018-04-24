@@ -34,7 +34,7 @@ public class ChatClient extends AbstractClient
 	// Constructor for initializing the client with default settings.
 	public ChatClient()
 	{
-		super("localhost", 8300);
+		super("10.252.184.216", 8300);
 	}
 
 	public ChatClient(String host, int port)

@@ -41,7 +41,7 @@ public class ChatClient extends AbstractClient
 	{
 		if (arg0 instanceof GameData)
 		{
-			System.out.println("Client recieved game data");
+			
 			
 			GameData data = (GameData)arg0;
 			Object result;

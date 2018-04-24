@@ -124,7 +124,7 @@ public class GameControl implements ActionListener{
 		int num =0;
 		for(int i = 0;i<index.length;i++)
 		{
-			if(index[i]!=0)
+			if(index[i]!=-1)
 			{
 				return false;
 			}

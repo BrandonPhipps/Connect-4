@@ -183,7 +183,6 @@ public class ChatServer extends AbstractServer
 			
 			
 			
-			
 			try
 			{
 				/*ConnectionToClient ctc = Clients.get(opponent);
@@ -240,7 +239,7 @@ public class ChatServer extends AbstractServer
 				}
 				
 			}
-			else if(message.equals("Win"))
+			else if(message.equals("PlayerWin"))
 			{
 				String userID = ""+arg1.getId();
 				int indexOfUser = userids.indexOf(userID);
@@ -258,7 +257,9 @@ public class ChatServer extends AbstractServer
 				try
 				{
 
-					Clients.get(opponent).sendToClient("Lose");
+					Clients.get(opponent).sendToClient("GameLose");
+					userids.clear();
+					playersInAMatch.clear();
 		
 				}
 				catch (IOException e)

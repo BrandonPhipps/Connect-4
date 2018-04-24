@@ -44,8 +44,12 @@ public class GamePanel extends JPanel{
         exitButton.addActionListener(gc);
         JButton replayButton = new JButton("Replay");
         replayButton.addActionListener(gc);    
+/*        exitButton.setVisible(false);
+        replayButton.setVisible(false);*/
         buttonPanel.add(exitButton);
         buttonPanel.add(replayButton);
+        buttonPanel.setVisible(false);
+        gc.setButtonPanel(buttonPanel);
         //JPanel viewPanel = new JPanel();
         this.setLayout(new BoxLayout(this,BoxLayout.PAGE_AXIS));
         this.add(info);

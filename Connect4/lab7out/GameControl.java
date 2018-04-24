@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import javax.swing.*;
-import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
 
 public class GameControl implements ActionListener{
 
@@ -19,7 +19,7 @@ public class GameControl implements ActionListener{
 	private Color color;
 	private Color opponentColor;
 	private boolean turn;
-
+	private JPanel buttonPanel;
 	public GameControl(JPanel container, ChatClient user) 
 	{
 		this.container = container;
@@ -29,7 +29,8 @@ public class GameControl implements ActionListener{
 		{
 			index[i] = 5;
 		}
-		turn = false; ////////////////////////////////////////////////
+		turn = false;
+		////////////////////////////////////////////////
 		/////////////////////////////This is the initial status. It can be change
 		//True: Player's turn
 		//False: other player's turn
@@ -45,7 +46,14 @@ public class GameControl implements ActionListener{
 		// The Login button takes the user to the login panel.
 		if (command.equals("Replay"))
 		{
-
+			try {
+				clearBoard();
+				buttonPanel.setVisible(false);
+				user.sendToServer("Start Game");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		else if(command.equals("Exit"))
 		{
@@ -70,7 +78,8 @@ public class GameControl implements ActionListener{
 						switchTurn();
 						info.setText("You Win");
 						try {
-							user.sendToServer("Win");
+							buttonPanel.setVisible(true);
+							user.sendToServer("PlayerWin");
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -155,6 +164,11 @@ public class GameControl implements ActionListener{
 		this.slots = slots;
 	}
 
+	public void setButtonPanel(JPanel buttonPanel)
+	{
+		this.buttonPanel=buttonPanel;
+	}
+	
 	public void switchTurn()
 	{
 		if(turn)
@@ -184,11 +198,25 @@ public class GameControl implements ActionListener{
 			}
 	}
 	
-	public void lose()
+	public void clearBoard()
+	{
+		 for (int column = 0; column < 6; column++) {
+			 index[column]=5;
+	            for (int row = 0; row < 7; row++) {
+	                slots[row][column].setBackground(Color.white);
+					slots[row][column].setOpaque(true);
+	            }
+	        }
+		 info.setText("");
+		 
+	}
+	
+	public void gameLose()
 	{
 		info.setText("Sorry, You Are Lose");
-		
+		buttonPanel.setVisible(true);
 	}
+	
 	
 	public void disableUsersColumnsSubmit()
 	{

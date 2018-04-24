@@ -26,7 +26,7 @@ private LoginControl lgc;
 @Before
 public void setUp() throws Exception
 {
-cg = new ClientGUI(null);
+cg = new ClientGUI();
 container = new JPanel(new CardLayout());
 ChatClient client = new ChatClient();
 hsc = new InitialControl(container,client);
@@ -47,28 +47,15 @@ public void testActionPerformed()
 JButton button;
 Random rand = new Random();
 int rnum = rand.nextInt(2);
-String com;
-System.out.print(rnum);
+
+//System.out.print(rnum);
 
 
-//button = pan.getButtonAt(rnum);
-
-//com = button.getActionCommand();
-
-//button.doClick(1000);
+button = pan.getButtonAt(rnum);
 
 
-//	button = cap.getButtonAt(rnum);
-//	button.doClick(1000);
 
-//	try {
-//	TimeUnit.SECONDS.sleep(2);
-//	} catch (InterruptedException e) {
-//	// TODO Auto-generated catch block
-//	e.printStackTrace();
-//	} 
-//	
-
+button.doClick(1000);
 
 }
 
